@@ -25,8 +25,7 @@ const MyPokemon = () => {
 				});
 				const findPokemonName = myPokemon.findIndex(
 					(item) => item.name === data.name
-				);
-				console.log(findPokemonName);
+				);			
 				if (findPokemonName > -1) {
 					myPokemon.splice(findPokemonName, 1);
 				}
@@ -43,7 +42,7 @@ const MyPokemon = () => {
 						<div className="PokeArt">
 							<Card.Img
 								variant="top"
-								src={data.artwork}
+								src={data.image}
 								style={{ width: '40%', height: '40%' }}
 							/>
 						</div>
