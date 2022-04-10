@@ -16,7 +16,8 @@ const Detail = () => {
 	const { loading, error, data } = useQuery(GET_POKEMON, {
 		variables: { name: params.name },
 	});
-	const MyPokemons = [];
+	const MyPokemons = JSON.parse(localStorage.getItem('MyPokemon')) || [];
+	console.log(MyPokemons);
 	const catchPokemon = () => {
 		const percentage = Math.floor(Math.random() * 100) + 1;
 		if (percentage < 50) {
@@ -29,8 +30,8 @@ const Detail = () => {
 				text: 'Success to catch',
 				icon: 'success',
 			});
-			MyPokemons.push(JSON.stringify(data.pokemon));
-			localStorage.setItem('MyPokemon', MyPokemons);
+			MyPokemons.push({ name: data.pokemon.name, id: data.pokemon.id });
+			localStorage.setItem('MyPokemon', JSON.stringify(MyPokemons));
 		}
 	};
 	// const imagePoke =
