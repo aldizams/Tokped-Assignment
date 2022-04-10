@@ -1,0 +1,19 @@
+.PokeList {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.PokeArt {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.PokeMove {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
